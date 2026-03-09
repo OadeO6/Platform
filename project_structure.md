@@ -42,7 +42,7 @@ lib/
 | Navigation | `go_router` | Declarative, deep link support |
 | Firebase Auth | `firebase_auth` | Google + email/password |
 | Firestore | `cloud_firestore` | Main database |
-| Firebase Storage | `firebase_storage` | Image uploads |
+| Cloudinary | `cloudinary_flutter` | Image uploads |
 | Push Notifications | `firebase_messaging` | FCM |
 | Deep Links | `firebase_dynamic_links` | Listing share links |
 | Google Sign-In | `google_sign_in` | OAuth |
@@ -105,7 +105,7 @@ platform/
 │   ├── services/
 │   │   ├── auth_service.dart         # signInWithGoogle, signInWithEmail, signOut, deleteAccount
 │   │   ├── firestore_service.dart    # All Firestore reads/writes
-│   │   ├── storage_service.dart      # Image upload/delete (Firebase Storage)
+│   │   ├── storage_service.dart      # Image upload/delete (Cloudinary)
 │   │   ├── fcm_service.dart          # FCM token, notification handling
 │   │   ├── location_service.dart     # getCurrentLocation, reverseGeocode
 │   │   └── whatsapp_service.dart     # buildWhatsAppUrl, launchWhatsApp
@@ -268,7 +268,8 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
   cloud_firestore: ^4.14.0
-  firebase_storage: ^11.6.0
+  cloudinary_flutter: ^2.0.0
+  cloudinary_url_gen: ^2.0.0
   firebase_messaging: ^14.7.10
   firebase_dynamic_links: ^5.4.12
 
