@@ -1,0 +1,64 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuth() {
+      return request.auth != null;
+    }
+
+    function isUser(uid) {
+      return isAuth() && request.auth.uid == uid;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    match /users/{userId} {
+      allow read: if isAuth();
+      allow create: if isUser(userId);
+      allow update: if isUser(userId)
+        && !incoming().diff(existing()).affectedKeys()
+            .hasAny(['space_count', 'listing_count']);
+      allow delete: if isUser(userId);
+
+      match /saved/{itemId} {
+        allow read, write: if isUser(userId);
+      }
+    }
+
+    match /items/{itemId} {
+      allow read: if isAuth();
+      allow create: if isAuth()
+        && incoming().seller_id == request.auth.uid
+        && incoming().status == 'unlisted'
+        && incoming().image_urls.size() >= 1
+        && incoming().image_urls.size() <= 5
+        && incoming().title.size() >= 3
+        && incoming().title.size() <= 80
+        && incoming().price > 0;
+      allow update: if isAuth()
+        && existing().seller_id == request.auth.uid
+        && incoming().title == existing().title
+        && incoming().seller_id == existing().seller_id;
+      allow delete: if isAuth()
+        && existing().seller_id == request.auth.uid;
+    }
+
+    match /reports/{reportId} {
+      allow create: if isAuth()
+        && incoming().reporter_id == request.auth.uid
+        && incoming().item_id is string
+        && incoming().reason is string;
+      allow read: if isAuth()
+        && existing().reporter_id == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+  }
+}

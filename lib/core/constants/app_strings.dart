@@ -182,6 +182,7 @@ class AppStrings {
   static const String termsOfService = 'Terms of Service';
   static const String privacyPolicy = 'Privacy Policy';
   static const String logout = 'Log Out';
+  static const String signOut = 'Sign Out';
   static const String deleteAccount = 'Delete Account';
   static const String deleteAccountConfirm =
       'Are you sure you want to delete your account? This will permanently remove your account and all your listings.';

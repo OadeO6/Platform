@@ -89,4 +89,9 @@ class AppConstants {
 
   static const String prefOnboardingSeen = 'onboarding_seen';
   static const String prefThemeMode = 'theme_mode';
+
+  // ── Notification Types ────────────────────────────────────────────────────
+
+  static const String notifTypeExpiry  = 'listing_expiry';
+  static const String notifTypeGeneral = 'general';
 }

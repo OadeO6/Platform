@@ -60,6 +60,8 @@ dependencies:
   uuid: ^4.5.1
   equatable: ^2.0.5
   cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  path: ^1.9.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,8 @@ dev_dependencies:
   riverpod_generator: ^2.6.1
   custom_lint: ^0.7.5
   riverpod_lint: ^2.6.1
+  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.14.3
 
 flutter:
   uses-material-design: true
@@ -77,3 +81,18 @@ flutter:
     - .env
     - assets/images/noise.png
     - assets/icons/app_icon.png
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#FFFFFF" # Your primary brand color
+  adaptive_icon_foreground: "assets/images/app_icon.png"
+
+flutter_native_splash:
+  color: "#FFFFFF" # Match your design spec base color
+  image: assets/images/app_icon.png
+  android_12:
+    image: assets/images/app_icon.png
+    icon_background_color: "#FFFFFF"
+  web: false

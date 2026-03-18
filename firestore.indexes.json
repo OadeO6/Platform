@@ -1,0 +1,71 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "items",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status",     "order": "ASCENDING"  },
+        { "fieldPath": "expires_at", "order": "ASCENDING"  },
+        { "fieldPath": "listed_at",  "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "items",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status",     "order": "ASCENDING"  },
+        { "fieldPath": "category",   "order": "ASCENDING"  },
+        { "fieldPath": "expires_at", "order": "ASCENDING"  },
+        { "fieldPath": "listed_at",  "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "items",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status",     "order": "ASCENDING"  },
+        { "fieldPath": "city",       "order": "ASCENDING"  },
+        { "fieldPath": "expires_at", "order": "ASCENDING"  },
+        { "fieldPath": "listed_at",  "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "items",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status",     "order": "ASCENDING"  },
+        { "fieldPath": "category",   "order": "ASCENDING"  },
+        { "fieldPath": "city",       "order": "ASCENDING"  },
+        { "fieldPath": "expires_at", "order": "ASCENDING"  },
+        { "fieldPath": "listed_at",  "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "items",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "seller_id",  "order": "ASCENDING"  },
+        { "fieldPath": "created_at", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "items",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "seller_id",  "order": "ASCENDING"  },
+        { "fieldPath": "status",     "order": "ASCENDING"  },
+        { "fieldPath": "expires_at", "order": "ASCENDING"  },
+        { "fieldPath": "listed_at",  "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "item_id",     "order": "ASCENDING" },
+        { "fieldPath": "reporter_id", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

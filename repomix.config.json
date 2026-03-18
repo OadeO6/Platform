@@ -1,0 +1,30 @@
+{
+  "output": {
+    "filePath": "repomix-output.xml",
+    "style": "xml"
+  },
+  "include": [
+    "lib/**/*",
+    "pubspec.yaml",
+    "pubspec.lock",
+    "analysis_options.yaml",
+    "test/**/*"
+  ],
+  "ignore": {
+    "patterns": [
+      ".dart_tool/**",
+      "build/**",
+      ".flutter-plugins",
+      ".flutter-plugins-dependencies",
+      "*.g.dart",
+      "*.freezed.dart",
+      "*.mocks.dart",
+      "android/**",
+      "ios/**",
+      "web/**",
+      "linux/**",
+      "macos/**",
+      "windows/**"
+    ]
+  }
+}
